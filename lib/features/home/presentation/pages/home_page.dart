@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
                     height: (40.0, 32.0).resolve,
                     width: (40.0, 32.0).resolve,
                   ),
+                  SizedBox(width: (8.0, 4.0).resolve),
                   Text(
                     context.locale.luckysTools,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(

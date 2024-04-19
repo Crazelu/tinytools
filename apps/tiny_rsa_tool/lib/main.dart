@@ -1,11 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:tiny_rsa_tool/assets/assets.gen.dart';
 import 'package:tiny_rsa_tool/encryption_helper.dart';
 import 'package:tiny_rsa_tool/widgets/check_box_tile.dart';
 import 'package:tiny_rsa_tool/widgets/custom_text_field.dart';
 import 'package:tiny_rsa_tool/widgets/footer.dart';
 import 'package:tiny_rsa_tool/widgets/responsive_builder.dart';
 import 'package:url_strategy/url_strategy.dart';
+import "package:universal_html/html.dart" as html;
 
 void main() {
   setPathUrlStrategy();
@@ -99,8 +101,46 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,
-        title: Text(widget.title),
+        title: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TinyRsaToolAssets.logo.image(
+                  height: (40.0, 32.0).resolve,
+                  width: (40.0, 32.0).resolve,
+                ),
+                SizedBox(width: (8.0, 4.0).resolve),
+                Text(
+                  widget.title,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFFFF3E43),
+                      ),
+                ),
+              ],
+            ),
+            InkWell(
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              onTap: () {
+                html.window.open(
+                  'https://tools.luckyebere.com/',
+                  "Lucky's Tools",
+                );
+              },
+              child: Text(
+                "From Lucky's Tools",
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: const Color(0xFF0BC19E),
+                    ),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Padding(
@@ -181,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           SizedBox(width: (24.0, 12.0).resolve),
                           TextButton(
                             onPressed: _process,
-                            child: Text('Process'),
+                            child: const Text('Process'),
                           ),
                         ],
                       ),
