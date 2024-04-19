@@ -63,10 +63,11 @@ class _MyHomePageState extends State<MyHomePage> {
       return;
     }
 
-    if (_forEncryption)
+    if (_forEncryption) {
       _encrypt();
-    else
+    } else {
       _decrypt();
+    }
   }
 
   void _encrypt() {
@@ -96,7 +97,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         title: Text(widget.title),
       ),
       body: Center(
