@@ -22,6 +22,7 @@ dependencies:
   dio: ^5.4.2+1
   url_launcher: ^6.2.5
   url_strategy: ^0.2.0
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
@@ -29,12 +30,13 @@ dev_dependencies:
   build_runner:
   flutter_lints: ^2.0.0
   mockito: ^5.4.4
+  flutter_gen_runner:
 
 flutter_gen:
   output: lib/core/assets
   assets:
     outputs:
-      class_name: AppAssets
+      class_name: TinyToolsAssets
       package_parameter_enabled: false
 
 flutter:

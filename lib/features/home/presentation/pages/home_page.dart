@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:tools/core/assets/assets.gen.dart';
 import 'package:tools/core/extensions/locale_extension.dart';
 import 'package:tools/core/presentation/viewmodel/view_model_provider.dart';
 import 'package:tools/core/presentation/widgets/responsive_builder.dart';
+import 'package:tools/core/presentation/widgets/scroll_behavior.dart';
 import 'package:tools/features/home/presentation/viewmodels/home_view_model.dart';
+import 'package:tools/features/home/presentation/widgets/tool_section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,37 +15,61 @@ class HomePage extends StatelessWidget {
     return ViewModelProvider(
       create: () => HomeViewModel(),
       builder: (context) {
-        final viewModel = context.read<HomeViewModel>();
-
         return ResponsiveWidgetBuilder(
           desktop: Scaffold(
-            floatingActionButton: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: FloatingActionButton(
-                onPressed: viewModel.increment,
-                child: const Icon(Icons.add),
-              ),
-            ),
-            body: Center(
-              child: Column(
+            appBar: AppBar(
+              surfaceTintColor: Colors.transparent,
+              title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ValueListenableBuilder(
-                    valueListenable: viewModel.counter,
-                    builder: (context, count, _) {
-                      return Text(
-                        'Ella${'!' * count}',
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      );
-                    },
+                  TinyToolsAssets.logo.image(
+                    height: (40.0, 32.0).resolve,
+                    width: (40.0, 32.0).resolve,
                   ),
-                  const SizedBox(height: 16),
                   Text(
-                    'Language: ${context.locale.language}',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    context.locale.luckysTools,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor,
+                        ),
                   ),
                 ],
               ),
+            ),
+            body: Column(
+              children: [
+                SizedBox(
+                  width: MediaQuery.sizeOf(context).width * 0.8,
+                  child: Text(
+                    context.locale.luckysToolsDescription,
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+                SizedBox(height: (12.0, 8.0).resolve),
+                Expanded(
+                  child: ScrollConfiguration(
+                    behavior: const TinyToolsScrollBehavior(),
+                    child: ListView(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: (
+                          MediaQuery.sizeOf(context).width * 0.3,
+                          16.0
+                        ).resolve,
+                        vertical: (100.0, 16.0).resolve,
+                      ),
+                      children: [
+                        ToolSection(
+                          title: context.locale.tinyRsaTool,
+                          description: context.locale.tinyRsaToolDescription,
+                          url: 'https://rsa.luckyebere.com',
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         );

@@ -4,7 +4,7 @@ import 'package:tools/core/dialog/dialog_routes.dart';
 
 class DialogGenerator {
   static Widget? onGenerateDialog(DialogSettings settings) {
-    final arg = settings.arguments;
+    // final arg = settings.arguments;
     switch (settings.name) {
       case DialogRoutes.error:
         // return ErrorDialog()

@@ -33,7 +33,27 @@ class _TinyToolsAppState extends State<TinyToolsApp> {
       onGenerateDialog: DialogGenerator.onGenerateDialog,
       child: MaterialApp(
         scrollBehavior: const _TinyToolsScrollBehavior(),
-        title: 'TinyTools',
+        title: "Lucky's Tools",
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF1C5154),
+          ),
+          primarySwatch: Colors.deepPurple,
+          textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              backgroundColor: MaterialStateProperty.all(Colors.black),
+              foregroundColor: MaterialStateProperty.all(Colors.white),
+              minimumSize: MaterialStateProperty.all(
+                (const Size(200, 48), const Size(140, 48)).resolve,
+              ),
+            ),
+          ),
+        ),
         localizationsDelegates: const [
           TinyToolsLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,

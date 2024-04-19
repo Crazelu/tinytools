@@ -29,17 +29,7 @@ void main() {
     final locale = TinyToolsLocalizationsEn();
 
     expect(find.byType(HomePage), findsOneWidget);
-    expect(find.text('Ella'), findsOneWidget);
-    expect(find.text('Language: ${locale.language}'), findsOneWidget);
-
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    expect(find.text('Ella!'), findsOneWidget);
-
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-    
-    expect(find.text('Ella!!'), findsOneWidget);
+    expect(find.text(locale.luckysTools), findsOneWidget);
+    expect(find.text(locale.luckysToolsDescription), findsOneWidget);
   });
 }

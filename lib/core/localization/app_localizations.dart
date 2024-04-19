@@ -96,6 +96,36 @@ abstract class TinyToolsLocalizations {
   /// In en, this message translates to:
   /// **'English'**
   String get language;
+
+  /// No description provided for @luckysTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Lucky\'s Tools'**
+  String get luckysTools;
+
+  /// No description provided for @luckysToolsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A collection of tiny tools to get common tasks done really quick!'**
+  String get luckysToolsDescription;
+
+  /// No description provided for @tinyRsaTool.
+  ///
+  /// In en, this message translates to:
+  /// **'Tiny RSA Tool'**
+  String get tinyRsaTool;
+
+  /// No description provided for @tinyRsaToolDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A tiny RSA encryption and decryption tool.'**
+  String get tinyRsaToolDescription;
+
+  /// No description provided for @tryItHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Try it here'**
+  String get tryItHere;
 }
 
 class _TinyToolsLocalizationsDelegate extends LocalizationsDelegate<TinyToolsLocalizations> {
