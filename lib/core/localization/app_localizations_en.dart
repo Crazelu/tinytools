@@ -21,4 +21,10 @@ class TinyToolsLocalizationsEn extends TinyToolsLocalizations {
 
   @override
   String get tryItHere => 'Try it here';
+
+  @override
+  String get jsonPrettifierTool => 'JSON Prettifier';
+
+  @override
+  String get jsonPrettifierToolDescription => 'Turn JSON blobs into a formatted prettier version for better visualization.';
 }

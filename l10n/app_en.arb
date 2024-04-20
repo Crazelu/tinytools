@@ -8,5 +8,7 @@
   "luckysToolsDescription": "A collection of tiny tools to get common tasks done really quick!",
   "tinyRsaTool": "Tiny RSA Tool",
   "tinyRsaToolDescription": "A tiny RSA encryption and decryption tool.",
-  "tryItHere": "Try it here"
+  "tryItHere": "Try it here",
+  "jsonPrettifierTool": "JSON Prettifier",
+  "jsonPrettifierToolDescription": "Turn JSON blobs into a formatted prettier version for better visualization."
 }

@@ -62,9 +62,18 @@ class HomePage extends StatelessWidget {
                       ),
                       children: [
                         ToolSection(
+                          image: TinyToolsAssets.tinyRsaToolLogo,
                           title: context.locale.tinyRsaTool,
                           description: context.locale.tinyRsaToolDescription,
                           url: 'https://rsa.luckyebere.com',
+                        ),
+                        SizedBox(height: (36.0, 24.0).resolve),
+                        ToolSection(
+                          image: TinyToolsAssets.jsonPrettifierLogo,
+                          title: context.locale.jsonPrettifierTool,
+                          description:
+                              context.locale.jsonPrettifierToolDescription,
+                          url: 'https://prettifier.luckyebere.com',
                         ),
                       ],
                     ),

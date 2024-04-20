@@ -12,10 +12,15 @@ import 'package:flutter/widgets.dart';
 class TinyToolsAssets {
   TinyToolsAssets._();
 
+  static const AssetGenImage jsonPrettifierLogo =
+      AssetGenImage('assets/json_prettifier_logo.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
+  static const AssetGenImage tinyRsaToolLogo =
+      AssetGenImage('assets/tiny_rsa_tool_logo.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [logo];
+  static List<AssetGenImage> get values =>
+      [jsonPrettifierLogo, logo, tinyRsaToolLogo];
 }
 
 class AssetGenImage {

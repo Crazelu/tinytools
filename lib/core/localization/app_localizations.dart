@@ -126,6 +126,18 @@ abstract class TinyToolsLocalizations {
   /// In en, this message translates to:
   /// **'Try it here'**
   String get tryItHere;
+
+  /// No description provided for @jsonPrettifierTool.
+  ///
+  /// In en, this message translates to:
+  /// **'JSON Prettifier'**
+  String get jsonPrettifierTool;
+
+  /// No description provided for @jsonPrettifierToolDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn JSON blobs into a formatted prettier version for better visualization.'**
+  String get jsonPrettifierToolDescription;
 }
 
 class _TinyToolsLocalizationsDelegate extends LocalizationsDelegate<TinyToolsLocalizations> {
