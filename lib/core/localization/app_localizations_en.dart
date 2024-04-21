@@ -27,4 +27,10 @@ class TinyToolsLocalizationsEn extends TinyToolsLocalizations {
 
   @override
   String get jsonPrettifierToolDescription => 'Turn JSON blobs into a formatted prettier version for better visualization.';
+
+  @override
+  String get ella => 'Ella';
+
+  @override
+  String get ellaDescription => 'Generate an opinionated batteries included starter Flutter project for Android, iOS and Web in 30 seconds.';
 }

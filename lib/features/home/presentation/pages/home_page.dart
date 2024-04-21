@@ -58,16 +58,21 @@ class HomePage extends StatelessWidget {
                           MediaQuery.sizeOf(context).width * 0.3,
                           16.0
                         ).resolve,
-                        vertical: (100.0, 16.0).resolve,
+                        vertical: (40.0, 16.0).resolve,
                       ),
                       children: [
+                        ToolSection(
+                          image: TinyToolsAssets.ellaLogo,
+                          title: context.locale.ella,
+                          description: context.locale.ellaDescription,
+                          url: 'https://github.com/Crazelu/ella',
+                        ),
                         ToolSection(
                           image: TinyToolsAssets.tinyRsaToolLogo,
                           title: context.locale.tinyRsaTool,
                           description: context.locale.tinyRsaToolDescription,
                           url: 'https://rsa.luckyebere.com',
                         ),
-                        SizedBox(height: (36.0, 24.0).resolve),
                         ToolSection(
                           image: TinyToolsAssets.jsonPrettifierLogo,
                           title: context.locale.jsonPrettifierTool,

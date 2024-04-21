@@ -138,6 +138,18 @@ abstract class TinyToolsLocalizations {
   /// In en, this message translates to:
   /// **'Turn JSON blobs into a formatted prettier version for better visualization.'**
   String get jsonPrettifierToolDescription;
+
+  /// No description provided for @ella.
+  ///
+  /// In en, this message translates to:
+  /// **'Ella'**
+  String get ella;
+
+  /// No description provided for @ellaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate an opinionated batteries included starter Flutter project for Android, iOS and Web in 30 seconds.'**
+  String get ellaDescription;
 }
 
 class _TinyToolsLocalizationsDelegate extends LocalizationsDelegate<TinyToolsLocalizations> {

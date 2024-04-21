@@ -10,5 +10,7 @@
   "tinyRsaToolDescription": "A tiny RSA encryption and decryption tool.",
   "tryItHere": "Try it here",
   "jsonPrettifierTool": "JSON Prettifier",
-  "jsonPrettifierToolDescription": "Turn JSON blobs into a formatted prettier version for better visualization."
+  "jsonPrettifierToolDescription": "Turn JSON blobs into a formatted prettier version for better visualization.",
+  "ella": "Ella",
+  "ellaDescription": "Generate an opinionated batteries included starter Flutter project for Android, iOS and Web in 30 seconds."
 }

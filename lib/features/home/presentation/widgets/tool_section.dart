@@ -53,6 +53,7 @@ class ToolSection extends StatelessWidget {
             '👉🏽 ${context.locale.tryItHere}',
           ),
         ),
+        SizedBox(height: (36.0, 24.0).resolve),
       ],
     );
   }
