@@ -4,4 +4,6 @@
 
 A collection of tiny tools to get common tasks done really quick! Try it [here](https://tools.luckyebere.com/)
 
+- [Ella](https://github.com/Crazelu/ella): Generate an opinionated batteries included starter Flutter project for Android, iOS and Web in 30 seconds.
 - [Tiny RSA Tool](https://rsa.luckyebere.com/): A tiny RSA encryption and decryption tool.
+- [JSON Prettifier](https://prettifier.luckyebere.com/): Turn JSON blobs into a formatted prettier version for better visualization.
