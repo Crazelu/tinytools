@@ -39,7 +39,7 @@ class ToolSection extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(height: (12.0, 4.0).resolve),
+        SizedBox(height: (8.0, 4.0).resolve),
         Text(
           description,
           style: Theme.of(context).textTheme.bodyLarge,
