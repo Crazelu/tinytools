@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(TinyRsaToolAssets.logo.provider(), context);
+
     return MaterialApp(
       title: 'Tiny RSA Tool',
       theme: ThemeData(

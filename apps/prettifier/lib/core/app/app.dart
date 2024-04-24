@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_dialog_manager/flutter_dialog_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:prettifier/core/assets/assets.gen.dart';
 import 'package:prettifier/core/extensions/locale_extension.dart';
 import 'package:prettifier/core/navigation/navigation_listener.dart';
 import 'package:prettifier/core/dialog/dialog_generator.dart';
@@ -26,7 +26,7 @@ class _PrettifierAppState extends State<PrettifierApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    precacheImage(PrettifierAssets.logo.provider(), context);
 
     return DialogManager(
       dialogKey: GetIt.I<DialogHandler>().dialogKey,

@@ -26,7 +26,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Tiny RSA Tool">
 
-  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="icon" type="image/vnd" href="favicon.ico">
 
   <title>Tiny RSA Tool</title>
@@ -47,6 +46,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="https://rsa.luckyebere.com/assets/assets/logo.png" as="image" crossorigin="">
 
   <script>
     // The value below is injected by flutter build, do not touch.
@@ -56,24 +56,93 @@
   <script src="flutter.js" defer></script>
 </head>
 
-<body bgcolor="#ffffff">
+<body>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    .progress-container {
+      width: 300px;
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: opacity 0.25s ease-out;
+    }
+
+    .progress-bar {
+      display: block;
+      height: 100%;
+      background-color: #000;
+      width: 0;
+      transition: width 0.5s ease;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      60% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <div class="progress-container" id="progressbar">
+    <div class="progress-bar" id="progress"></div>
+  </div>
   <script>
+    function addDelay(delay) {
+      return new Promise((resolve) => window.setTimeout(resolve, delay));
+    }
+
+    const progress = document.getElementById("progress");
+    const progressBar = document.getElementById("progressbar");
+
+    progress.style.width = `10%`;
+
     window.addEventListener('load', function (ev) {
-      // Download main.dart.js
+      progress.style.width = `33%`;
+
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function (engineInitializer) {
-          engineInitializer.initializeEngine().then(function (appRunner) {
-            appRunner.runApp();
-          });
-        }
+        onEntrypointLoaded: async function (engineInitializer) {
+          progress.style.width = `53%`;
+          await addDelay(200);
+          progress.style.width = `86%`;
+
+          const appRunner = await engineInitializer.initializeEngine();
+
+          progress.style.width = `99%`;
+
+          await addDelay(400);
+
+          progressBar.style.opacity = 0;
+
+          await appRunner.runApp();
+
+          document.querySelector("flutter-view").classList.add("fade-in");
+        },
       });
     });
   </script>
-  <script src="main.dart.js?version=1.0.2&build_number=6" type="application/javascript"></script>
-  <img src="assets/loading.gif" />
 </body>
 
 </html>

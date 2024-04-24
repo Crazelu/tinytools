@@ -63,12 +63,14 @@ class HomePage extends StatelessWidget {
                       children: [
                         ToolSection(
                           image: TinyToolsAssets.ellaLogo,
+                          imageSize: 44,
                           title: context.locale.ella,
                           description: context.locale.ellaDescription,
                           url: 'https://github.com/Crazelu/ella',
                         ),
                         ToolSection(
                           image: TinyToolsAssets.tinyRsaToolLogo,
+                          imageSize: 36,
                           title: context.locale.tinyRsaTool,
                           description: context.locale.tinyRsaToolDescription,
                           url: 'https://rsa.luckyebere.com',

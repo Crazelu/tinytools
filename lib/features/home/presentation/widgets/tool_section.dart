@@ -6,18 +6,19 @@ import 'package:tools/core/presentation/widgets/responsive_builder.dart';
 import 'package:tools/features/home/presentation/viewmodels/home_view_model.dart';
 
 class ToolSection extends StatelessWidget {
-  const ToolSection({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.url,
-    required this.image,
-  });
+  const ToolSection(
+      {super.key,
+      required this.title,
+      required this.description,
+      required this.url,
+      required this.image,
+      this.imageSize = 32});
 
   final String title;
   final String description;
   final String url;
   final AssetGenImage image;
+  final double imageSize;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,8 @@ class ToolSection extends StatelessWidget {
         Row(
           children: [
             image.image(
-              height: (32.0, 24.0).resolve,
-              width: (32.0, 24.0).resolve,
+              height: (imageSize, imageSize - 8).resolve,
+              width: (imageSize, imageSize - 8).resolve,
             ),
             const SizedBox(width: 4),
             Text(

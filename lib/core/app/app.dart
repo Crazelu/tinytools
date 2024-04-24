@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_dialog_manager/flutter_dialog_manager.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:tools/core/assets/assets.gen.dart';
 import 'package:tools/core/navigation/navigation_listener.dart';
 import 'package:tools/core/dialog/dialog_generator.dart';
 import 'package:tools/core/dialog/dialog_handler.dart';
@@ -25,7 +25,10 @@ class _TinyToolsAppState extends State<TinyToolsApp> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    precacheImage(TinyToolsAssets.ellaLogo.provider(), context);
+    precacheImage(TinyToolsAssets.logo.provider(), context);
+    precacheImage(TinyToolsAssets.tinyRsaToolLogo.provider(), context);
+    precacheImage(TinyToolsAssets.jsonPrettifierLogo.provider(), context);
 
     return DialogManager(
       dialogKey: GetIt.I<DialogHandler>().dialogKey,

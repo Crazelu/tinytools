@@ -1,7 +1,7 @@
 name: tools
 description: "A collection of tiny tools to get common tasks done really quick!"
 publish_to: none
-version: 1.0.2+6
+version: 1.0.2+9
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

@@ -1,5 +1,5 @@
 buildWeb:
-	flutter build web --web-renderer html
+	flutter build web
 
 runCodeGen:
 	dart run build_runner build --delete-conflicting-outputs
