@@ -5,5 +5,7 @@
     "description": "The current language"
   },
   "jsonPrettifier": "JSON Prettifier",
-  "enterJSON": "Enter JSON..."
+  "enterJSON": "Enter JSON...",
+  "copy": "Copy",
+  "copied": "Copied!"
 }

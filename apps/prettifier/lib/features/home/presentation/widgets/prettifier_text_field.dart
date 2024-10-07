@@ -4,11 +4,14 @@ import 'package:prettifier/features/home/presentation/viewmodels/home_view_model
 import 'package:provider/provider.dart';
 
 class PrettifierTextField extends StatelessWidget {
-  const PrettifierTextField({super.key});
+  const PrettifierTextField({super.key, required this.controller});
+
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       onChanged: (value) {
         context.read<HomeViewModel>().prettify(value);
       },

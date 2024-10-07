@@ -108,6 +108,18 @@ abstract class PrettifierLocalizations {
   /// In en, this message translates to:
   /// **'Enter JSON...'**
   String get enterJSON;
+
+  /// No description provided for @copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copy;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied!'**
+  String get copied;
 }
 
 class _PrettifierLocalizationsDelegate extends LocalizationsDelegate<PrettifierLocalizations> {

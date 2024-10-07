@@ -12,4 +12,10 @@ class PrettifierLocalizationsEn extends PrettifierLocalizations {
 
   @override
   String get enterJSON => 'Enter JSON...';
+
+  @override
+  String get copy => 'Copy';
+
+  @override
+  String get copied => 'Copied!';
 }

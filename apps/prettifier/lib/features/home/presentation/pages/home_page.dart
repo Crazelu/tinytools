@@ -8,8 +8,21 @@ import 'package:prettifier/core/presentation/widgets/responsive_builder.dart';
 import 'package:prettifier/features/home/presentation/viewmodels/home_view_model.dart';
 import "package:universal_html/html.dart" as html;
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +69,9 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          body: const ResponsiveWidgetBuilder(
-            desktop: DesktopHomePage(),
-            mobile: MobileHomePage(),
+          body: ResponsiveWidgetBuilder(
+            desktop: DesktopHomePage(controller: _controller),
+            mobile: MobileHomePage(controller: _controller),
           ),
         );
       },
